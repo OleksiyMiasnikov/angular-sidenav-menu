@@ -1,0 +1,32 @@
+<mat-sidenav-container class="app-sidenav-container " >
+  <mat-sidenav id="side_nav_menu"
+  class="mat-elevation-z10"
+  [ngClass]="{'compact-sidebar': !isWide, 'wide-sidebar': isWide}" 
+  (mouseenter)="isWide = true"
+  (mouseleave)="isWide = false"   
+  mode="side" opened>    
+
+    <mat-nav-list *ngFor="let item of menuItemsList" >
+      <mat-list-item routerLink="{{ item.link }}" >
+        <mat-icon>{{ item.icon }}</mat-icon>
+        <span *ngIf="isWide">{{ item.title }}</span>
+      </mat-list-item>
+    </mat-nav-list>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content [style.padding-left.px]="getPaddingLeft()" >    
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
+<mat-toolbar color="primary" class="mat-elevation-z10">
+  <button mat-button (click)="isWide = !isWide">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span class="spacer"></span>
+  <button mat-button>
+    Logout
+  </button>
+  <mat-icon matBadge="3" matBadgeColor="accent" matBadgeSize="small">notifications</mat-icon>
+</mat-toolbar>

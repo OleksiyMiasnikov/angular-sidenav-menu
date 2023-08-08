@@ -1,0 +1,51 @@
+/* background-color: #3f51b5; */
+
+.mat-toolbar{
+  padding-left: 15px;
+  height: 3rem; 
+  z-index: 100;  
+  position: absolute;
+  top: 0px;
+  left: 0px;  
+}
+
+.mat-toolbar button {
+  padding-right: 30px;
+}
+
+.spacer{
+  flex: 1 1 auto;
+}
+
+.app-sidenav-container{
+  top: 3rem;
+  height: 94%;
+  width: 100%;
+  z-index: 10;
+}
+
+.compact-sidebar{ 
+  width: 4rem;   
+}
+
+.wide-sidebar {
+  width: 10rem;
+}
+
+mat-list-item .mat-icon{  
+  font-size: 20px;  
+  margin-left: 5px;
+}
+
+mat-list-item span {
+  position: relative;  
+  margin-left: 10px;
+  top: -7px;
+  font-size: 14px;  
+}
+
+.mat-sidenav-content {
+  /* background-color: aqua; */
+
+}
+
