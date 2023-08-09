@@ -1,7 +1,8 @@
-<mat-card class="lead">
+<mat-card class="lead" cdkDrag>
   <mat-card-content (click)="onClick()" draggable="true">
     <p> id: {{lead.id}} </p>
     <p> title: {{lead.title}} </p>
     <p> title: {{lead.stage}} </p>
   </mat-card-content>
 </mat-card>
+<div class="drop_area"></div>

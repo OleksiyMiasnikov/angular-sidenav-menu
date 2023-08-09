@@ -52,6 +52,22 @@ export class ApiService {
     return this.getAllLeads().filter((l) => l.stage == stage);
   }
 
+  updateLead(lead: Lead) {
+    console.log(lead)
+    let leads = this.getAllLeads();
+    leads.map((l) => {
+      if (l.id == lead.id) {
+        // updating all fields
+        l.title = lead.title;
+        l.stage = lead.stage;
+        console.log(l)
+        return;
+      }
+    });
+    console.log(leads)
+    localStorage.setItem('leads', JSON.stringify(leads));
+  }
+
   getAllLeads(): Lead[] {
     let result = localStorage.getItem('leads');    
     return (result) ? JSON.parse(result): [{ id: 1, title: 'Lead 01', stage: 'New'}];

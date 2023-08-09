@@ -7,7 +7,7 @@
     <mat-icon>cloud_download</mat-icon>
   </button>
 </mat-toolbar>
-<div class="kanban">
+<div class="kanban" cdkDropListGroup>
   <app-column *ngFor="let stage of stages" [stage]="stage">    
   </app-column>
 </div>

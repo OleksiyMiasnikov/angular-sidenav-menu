@@ -1,9 +1,16 @@
-<mat-card class="lead">
-  <div class="column_title">{{stage.title}}</div>
-  <button mat-button color="accent" (click)="addLead()">
+<mat-card class="column_title">
+  <div>{{stage.title}}</div>
+  <button mat-button color="accent">
     <mat-icon>add</mat-icon>
   </button>
 </mat-card>
-<div class="column">  
+<div class="drop_area" cdkDropList 
+  [cdkDropListData]="leads"
+  (cdkDropListDropped)="drop($event)"></div>
+
+<div class="column" 
+  cdkDropList 
+  [cdkDropListData]="leads"
+  (cdkDropListDropped)="drop($event)">  
     <app-lead *ngFor="let lead of leads" [lead]="lead"></app-lead>
 </div>

@@ -1,3 +1,4 @@
+import { CdkDragDrop } from '@angular/cdk/drag-drop';
 import { Component, Input } from '@angular/core';
 import { Lead } from 'src/app/model/lead';
 
@@ -12,4 +13,5 @@ export class LeadComponent {
   onClick() {
     console.log(this.lead);
   }
+
 }

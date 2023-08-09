@@ -12,6 +12,7 @@ import { ColumnComponent } from './component/column/column.component';
 import { LeadComponent } from './component/lead/lead.component';
 import { SettingsComponent } from './component/settings/settings.component';
 import { AnalyticsComponent } from './component/analytics/analytics.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { AnalyticsComponent } from './component/analytics/analytics.component';
     AppRoutingModule,
     MaterialModule,
     BrowserAnimationsModule,
+    DragDropModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

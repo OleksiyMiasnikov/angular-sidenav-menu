@@ -1,22 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
-
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .lead {
-  margin-bottom: 20px;
   width: 250px;
 }
 
 .column { 
   display: block;
   margin-right: 20px;
+  min-height: 150px;
 }
 
 .column_title{
+  width: 250px;  
+  padding-top: 10px;  
+  margin-right: 20px;
   text-align: center;
   font-size: large;
-  padding-top: 10px;  
 }
 
 .kanban { 
@@ -26,3 +26,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .spacer {
   flex: 1 1 auto;
 }
+
+.drop_area{
+  height: 15px;
+}
+
