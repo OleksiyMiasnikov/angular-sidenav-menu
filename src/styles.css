@@ -13,7 +13,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .column_title{
   width: 250px;  
-  padding-top: 10px;  
+  padding: 10px;  
   margin-right: 20px;
   text-align: center;
   font-size: large;
@@ -31,3 +31,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   height: 15px;
 }
 
+.mat-button-toggle-group {
+  height: 36px;
+  align-items: center; 
+}
+
+
+.mat-button-toggle-group .mat-icon {  
+  font-size: 16px;
+}

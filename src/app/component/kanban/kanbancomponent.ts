@@ -13,13 +13,8 @@ export class KanbanComponent implements OnInit{
   constructor(private service: ApiService) {    
   }
 
-  ngOnInit(): void {   
+  ngOnInit(): void {     
     this.stages = this.service.getStages();
-  }
-
-  init(): void {
-    this.service.init();
-    this.ngOnInit();
   }
 
   addColumn() {

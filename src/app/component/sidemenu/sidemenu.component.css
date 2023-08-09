@@ -10,7 +10,8 @@
 }
 
 .mat-toolbar button {
-  padding-right: 30px;
+  margin-right: 30px;
+  /* padding-right: 30px; */
 }
 
 .app-sidenav-container{

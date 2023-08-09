@@ -9,6 +9,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCardModule } from '@angular/material/card';
 import { MatBadgeModule } from '@angular/material/badge';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 @NgModule({
   exports: [
@@ -22,6 +23,7 @@ import { MatBadgeModule } from '@angular/material/badge';
     MatSelectModule,
     MatCardModule,
     MatBadgeModule,
+    MatButtonToggleModule,
   ],
 })
 export class MaterialModule {}

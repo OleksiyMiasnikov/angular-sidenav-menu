@@ -10,7 +10,7 @@ export class ApiService {
   constructor() { }  
   init() {
     const menuItems: SideNavMenuItem[] = [
-      { icon: 'library_books', title: 'Kanban', link: 'kanban' },
+      { icon: 'library_books', title: 'Leads', link: 'leads' },
       { icon: 'contacts', title: 'Contacts', link: 'contacts' },
       { icon: 'analytics', title: 'Analytics', link: 'analytics' },
       { icon: 'settings', title: 'Settings', link: 'settings' },
@@ -52,19 +52,16 @@ export class ApiService {
     return this.getAllLeads().filter((l) => l.stage == stage);
   }
 
-  updateLead(lead: Lead) {
-    console.log(lead)
+  updateLead(lead: Lead) {    
     let leads = this.getAllLeads();
     leads.map((l) => {
       if (l.id == lead.id) {
         // updating all fields
         l.title = lead.title;
-        l.stage = lead.stage;
-        console.log(l)
+        l.stage = lead.stage;        
         return;
       }
-    });
-    console.log(leads)
+    });    
     localStorage.setItem('leads', JSON.stringify(leads));
   }
 

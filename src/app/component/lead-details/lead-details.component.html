@@ -1,0 +1,25 @@
+<div class="lead-details">
+  <h2 class="window-title">Lead details</h2>
+  <form class="lead-details-form" [formGroup]="leadForm" (ngSubmit)="submit()">
+    <mat-form-field>
+      <mat-label>Lead title</mat-label>
+      <input matInput name="value">
+    </mat-form-field>  
+    <mat-form-field>
+    <mat-label>Stage</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let stage of stages" [value]="stage">
+          {{stage.title}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div class="form-buttons">
+      <button mat-raised-button color="primary">
+        <mat-icon>save</mat-icon>
+      </button>
+      <button mat-raised-button>
+        <mat-icon color="warn">cancel</mat-icon>
+      </button>
+    </div>
+  </form>
+</div>

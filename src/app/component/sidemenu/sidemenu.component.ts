@@ -17,6 +17,10 @@ export class SidemenuComponent implements OnInit {
   ngOnInit(): void {
     this.menuItemsList = this.service.getMenuItems();
   }
+    
+  init(): void {
+    this.service.init();    
+  }
 
   getPaddingLeft(): number {
     const element = document.querySelector('#side_nav_menu');

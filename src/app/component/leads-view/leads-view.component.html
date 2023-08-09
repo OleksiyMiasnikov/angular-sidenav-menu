@@ -1,0 +1,21 @@
+<mat-toolbar>
+  <mat-button-toggle-group #group="matButtonToggleGroup" value="kanban">
+    <mat-button-toggle value="kanban" ng-disabled="isLeadDetailsShown">
+      <mat-icon>dashboard</mat-icon>
+    </mat-button-toggle>
+    <mat-button-toggle value="table">
+      <mat-icon>table_rows</mat-icon>
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+  <button mat-raised-button color="basic" (click)="newLead()">
+    New lead
+  </button>
+  <span class="spacer"></span>
+</mat-toolbar>
+ 
+<app-kanban *ngIf="group.value == 'kanban'"></app-kanban>
+<app-table *ngIf="group.value == 'table'"></app-table>
+<app-lead-details *ngIf="isLeadDetailsShown"></app-lead-details>
+
+  
+
