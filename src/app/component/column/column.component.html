@@ -1,0 +1,8 @@
+<mat-card class="lead">
+  <button mat-button color="accent" (click)="addLead()">
+    <mat-icon>add</mat-icon>
+  </button>
+</mat-card>
+<div class="column">  
+    <app-lead *ngFor="let lead of leads" [lead]="lead"></app-lead>
+</div>

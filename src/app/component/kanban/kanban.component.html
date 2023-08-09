@@ -1,0 +1,8 @@
+<mat-toolbar>
+  <button mat-mini-fab color="accent" (click)="addColumn()">
+    <mat-icon>add</mat-icon>
+  </button>
+</mat-toolbar>
+<div class="kanban">
+  <app-column *ngFor="let stage of stages" [stage]="stage"></app-column>
+</div>

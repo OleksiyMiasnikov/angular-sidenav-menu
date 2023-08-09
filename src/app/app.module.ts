@@ -7,14 +7,18 @@ import { MaterialModule } from './common/material-module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidemenuComponent } from './component/sidemenu/sidemenu.component';
 import { ContactsComponent } from './component/contacts/contacts.component';
-import { DashboardComponent } from './component/dashboard/dashboard.component';
+import { KanbanComponent } from './component/kanban/kanbancomponent';
+import { ColumnComponent } from './component/column/column.component';
+import { LeadComponent } from './component/lead/lead.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SidemenuComponent,
     ContactsComponent,
-    DashboardComponent,
+    KanbanComponent,
+    ColumnComponent,
+    LeadComponent,
   ],
   imports: [
     BrowserModule,

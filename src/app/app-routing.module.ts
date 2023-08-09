@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ContactsComponent } from './component/contacts/contacts.component';
-import { DashboardComponent } from './component/dashboard/dashboard.component';
+import { KanbanComponent } from './component/kanban/kanbancomponent';
 
 const routes: Routes = [
   // { path: '', redirectTo: '/main', pathMatch: 'full' },
-  { path: 'dashboard', component: DashboardComponent },
+  { path: 'kanban', component: KanbanComponent },
   { path: 'contacts', component: ContactsComponent },
   { path: 'settings', component: ContactsComponent },
 ];
