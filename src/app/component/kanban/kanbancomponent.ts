@@ -1,5 +1,4 @@
-import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
-import { ColumnComponent } from '../column/column.component';
+import { Component, OnInit} from '@angular/core';
 import { Stage } from 'src/app/model/stage';
 import { ApiService } from 'src/app/service/api.service';
 
@@ -8,23 +7,23 @@ import { ApiService } from 'src/app/service/api.service';
   templateUrl: './kanban.component.html',
   styleUrls: ['./kanban.component.css']
 })
-export class KanbanComponent implements OnInit{
-
-  @ViewChild('kanban', { read: ViewContainerRef })
-  container!: ViewContainerRef;  
-  
+export class KanbanComponent implements OnInit{  
   stages: Stage[] = [];
 
   constructor(private service: ApiService) {    
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void {   
     this.stages = this.service.getStages();
   }
 
+  init(): void {
+    this.service.init();
+    this.ngOnInit();
+  }
+
   addColumn() {
-     //todo
-    //this.container.createComponent(ColumnComponent);
+     //todo   
   }
 
 }

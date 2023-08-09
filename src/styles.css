@@ -13,6 +13,16 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   margin-right: 20px;
 }
 
+.column_title{
+  text-align: center;
+  font-size: large;
+  padding-top: 10px;  
+}
+
 .kanban { 
   display: flex;
+}
+
+.spacer {
+  flex: 1 1 auto;
 }

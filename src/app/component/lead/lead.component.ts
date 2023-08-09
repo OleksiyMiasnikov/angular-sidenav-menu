@@ -8,4 +8,8 @@ import { Lead } from 'src/app/model/lead';
 })
 export class LeadComponent {
   @Input() lead!: Lead;  
+
+  onClick() {
+    console.log(this.lead);
+  }
 }

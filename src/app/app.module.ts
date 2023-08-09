@@ -10,6 +10,8 @@ import { ContactsComponent } from './component/contacts/contacts.component';
 import { KanbanComponent } from './component/kanban/kanbancomponent';
 import { ColumnComponent } from './component/column/column.component';
 import { LeadComponent } from './component/lead/lead.component';
+import { SettingsComponent } from './component/settings/settings.component';
+import { AnalyticsComponent } from './component/analytics/analytics.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { LeadComponent } from './component/lead/lead.component';
     KanbanComponent,
     ColumnComponent,
     LeadComponent,
+    SettingsComponent,
+    AnalyticsComponent,
   ],
   imports: [
     BrowserModule,

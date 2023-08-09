@@ -13,10 +13,6 @@
   padding-right: 30px;
 }
 
-.spacer{
-  flex: 1 1 auto;
-}
-
 .app-sidenav-container{
   top: 3rem;
   height: 94%;

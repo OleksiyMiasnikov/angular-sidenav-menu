@@ -1,5 +1,4 @@
-import { Component, Input, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
-import { LeadComponent } from '../lead/lead.component';
+import { Component, Input, OnInit } from '@angular/core';
 import { Lead } from 'src/app/model/lead';
 import { ApiService } from 'src/app/service/api.service';
 import { Stage } from 'src/app/model/stage';
@@ -9,10 +8,8 @@ import { Stage } from 'src/app/model/stage';
   templateUrl: './column.component.html',
   styleUrls: ['./column.component.css']
 })
+  
 export class ColumnComponent implements OnInit{
-  @ViewChild('column', { read: ViewContainerRef })
-  container!: ViewContainerRef;
-
   @Input() stage!: Stage;
   leads: Lead[] = [];
   
@@ -24,9 +21,7 @@ export class ColumnComponent implements OnInit{
   }
   
   addLead() {
-    //todo
-    //this.container.createComponent(LeadComponent);
-
+    //todo    
   }
   
 }

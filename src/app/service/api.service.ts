@@ -7,30 +7,21 @@ import { Stage } from '../model/stage';
   providedIn: 'root',
 })
 export class ApiService {
-  constructor() {}
-
-  getMenuItems(): SideNavMenuItem[] {
-    return [
-      { icon: 'dashboard', title: 'Kanban', link: 'kanban' },
+  constructor() { }  
+  init() {
+    const menuItems: SideNavMenuItem[] = [
+      { icon: 'library_books', title: 'Kanban', link: 'kanban' },
       { icon: 'contacts', title: 'Contacts', link: 'contacts' },
+      { icon: 'analytics', title: 'Analytics', link: 'analytics' },
       { icon: 'settings', title: 'Settings', link: 'settings' },
     ];
-  }
-
-  getStages(): Stage[] {
-    return [
+    const stages: Stage[] = [
       { id: 1, title: 'New'},
       { id: 2, title: 'In progress'},
-      { id: 3, title: 'Complete' },      
+      { id: 4, title: 'Checking' },   
+      { id: 8, title: 'Complete' },
     ];
-  }
-
-  getLeadsByStatus(stage: string): Lead[] {
-    return this.getAllLeads().filter((l) => l.stage == stage);
-  }
-
-  getAllLeads(): Lead[] {
-    return [
+    const leads: Lead[] = [
       { id: 1, title: 'Lead 01', stage: 'New'},
       { id: 2, title: 'Lead 02', stage: 'Complete'},
       { id: 3, title: 'Lead 03', stage: 'In progress'},
@@ -41,5 +32,28 @@ export class ApiService {
       { id: 8, title: 'Lead 08', stage: 'Complete'},
       { id: 9, title: 'Lead 09', stage: 'In progress'},      
     ];
+    localStorage.clear;
+    localStorage.setItem('menu_items', JSON.stringify(menuItems));
+    localStorage.setItem('stages', JSON.stringify(stages));
+    localStorage.setItem('leads', JSON.stringify(leads));
+  }
+
+  getMenuItems(): SideNavMenuItem[] {
+    let result = localStorage.getItem('menu_items');    
+    return (result) ? JSON.parse(result): [{ icon: 'dashboard', title: 'Kanban', link: 'kanban' }];
+  }
+
+  getStages(): Stage[] {
+    let result = localStorage.getItem('stages');    
+    return ((result) ? JSON.parse(result): [{ id: 1, title: 'New'}]).sort((a: Stage, b: Stage) => a.id - b.id);
+  }
+
+  getLeadsByStatus(stage: string): Lead[] {
+    return this.getAllLeads().filter((l) => l.stage == stage);
+  }
+
+  getAllLeads(): Lead[] {
+    let result = localStorage.getItem('leads');    
+    return (result) ? JSON.parse(result): [{ id: 1, title: 'Lead 01', stage: 'New'}];
   }
 }
