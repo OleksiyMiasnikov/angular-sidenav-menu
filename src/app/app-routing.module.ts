@@ -3,11 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { ContactsComponent } from './component/contacts/contacts.component';
 import { SettingsComponent } from './component/settings/settings.component';
 import { AnalyticsComponent } from './component/analytics/analytics.component';
-import { LeadsViewComponent } from './component/leads-view/leads-view.component';
+import { KanbanComponent } from './component/kanban/kanbancomponent';
+import { TableComponent } from './component/table/table.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/leads', pathMatch: 'full' },
-  { path: 'leads', component: LeadsViewComponent },
+  { path: '', redirectTo: '/kanban', pathMatch: 'full' },
+  { path: 'kanban', component: KanbanComponent },
+  { path: 'table', component: TableComponent },
   { path: 'contacts', component: ContactsComponent },
   { path: 'settings', component: SettingsComponent },
   { path: 'analytics', component: AnalyticsComponent },

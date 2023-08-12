@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-leads-view',
-  templateUrl: './leads-view.component.html',
-  styleUrls: ['./leads-view.component.css']
+  selector: 'app-leads-toolbar',
+  templateUrl: './leads-toolbar.component.html',
+  styleUrls: ['./leads-toolbar.component.css']
 })
-  
-export class LeadsViewComponent{
+export class LeadsToolbarComponent {
+  @Input()
+  view!: string;  
   isLeadDetailsShown: boolean = false;
   isColumnSettings: boolean = false;
 

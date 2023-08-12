@@ -10,6 +10,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatCardModule } from '@angular/material/card';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   exports: [
@@ -24,6 +27,9 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
     MatCardModule,
     MatBadgeModule,
     MatButtonToggleModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
   ],
 })
 export class MaterialModule {}

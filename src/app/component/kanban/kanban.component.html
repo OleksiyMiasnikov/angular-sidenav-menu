@@ -1,4 +1,5 @@
-<div class="kanban" cdkDropListGroup>
+<app-leads-toolbar [view]="'kanban'"></app-leads-toolbar>
+<div class="leads-content" cdkDropListGroup>
   <app-column *ngFor="let stage of stages" [stage]="stage">    
   </app-column>
 </div>

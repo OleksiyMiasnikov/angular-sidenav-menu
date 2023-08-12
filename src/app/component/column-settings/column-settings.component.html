@@ -2,7 +2,14 @@
   <h2 class="window-title">Column settings</h2>
 
   <form  class="column-settings-form">
-
+    <div class="form-buttons">
+      <button mat-raised-button color="primary" (click)="savePressed()">
+        <mat-icon>save</mat-icon>
+      </button>
+      <button mat-raised-button (click)="cancelPressed()">
+        <mat-icon color="warn">cancel</mat-icon>
+      </button>
+    </div>
 
   </form>
 </div>

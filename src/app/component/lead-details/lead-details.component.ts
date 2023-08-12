@@ -15,7 +15,6 @@ export class LeadDetailsComponent implements OnInit{
   @Output()
   inAction = new EventEmitter<boolean>();
   stages!: Stage[];
-  // lead!: Lead;
   leadForm!: FormGroup; 
 
   constructor(private service: ApiService) { }
@@ -44,7 +43,7 @@ export class LeadDetailsComponent implements OnInit{
       this.service.updateLead(this.createLead());     
     }
     
-    window.location.reload();
+    location.reload();
     this.inAction.emit(false);       
   }
   

@@ -7,7 +7,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .column { 
   display: block;
-  margin-right: 20px;
+  /* margin-right: 20px; */
   min-height: 150px;
 }
 
@@ -19,8 +19,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   font-size: large;
 }
 
-.kanban { 
-  display: flex;  
+.leads-content {
+  display: flex;
+  margin: 0px 20px;
 }
 
 .spacer {

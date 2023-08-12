@@ -10,7 +10,7 @@ export class ApiService {
   constructor() { }  
   init() {
     const menuItems: SideNavMenuItem[] = [
-      { icon: 'library_books', title: 'Leads', link: 'leads' },
+      { icon: 'library_books', title: 'Leads', link: 'kanban' },
       { icon: 'contacts', title: 'Contacts', link: 'contacts' },
       { icon: 'analytics', title: 'Analytics', link: 'analytics' },
       { icon: 'settings', title: 'Settings', link: 'settings' },

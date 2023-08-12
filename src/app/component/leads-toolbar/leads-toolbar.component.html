@@ -1,0 +1,20 @@
+<mat-toolbar>
+  <mat-button-toggle-group #group="matButtonToggleGroup" value="{{view}}">
+    <mat-button-toggle value="kanban" routerLink="../kanban">
+      <mat-icon >dashboard</mat-icon>
+    </mat-button-toggle>
+    <mat-button-toggle value="table" routerLink="../table">
+      <mat-icon >table_rows</mat-icon>
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+  <button mat-raised-button color="basic" (click)="newLead()">
+    New lead
+  </button>
+  <span class="spacer"></span>
+  <mat-icon (click)="columnSettings()">settings</mat-icon>
+</mat-toolbar>
+<app-lead-details *ngIf="isLeadDetailsShown" (inAction)="closeLeadDetails()">
+</app-lead-details>
+
+<app-column-settings *ngIf="isColumnSettings" (componentClose)="closeColumnSettings()">
+</app-column-settings>

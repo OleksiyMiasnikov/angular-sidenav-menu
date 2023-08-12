@@ -24,6 +24,6 @@ export class SidemenuComponent implements OnInit {
 
   getPaddingLeft(): number {
     const element = document.querySelector('#side_nav_menu');
-    return (element) ? element.clientWidth : 65;  
+    return (element) ? element.clientWidth : 63;  
   }
 }

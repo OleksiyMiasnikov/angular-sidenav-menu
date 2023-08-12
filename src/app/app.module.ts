@@ -12,11 +12,11 @@ import { LeadCardComponent } from './component/lead-card/lead-card.component';
 import { SettingsComponent } from './component/settings/settings.component';
 import { AnalyticsComponent } from './component/analytics/analytics.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import { LeadsViewComponent } from './component/leads-view/leads-view.component';
 import { TableComponent } from './component/table/table.component';
 import { LeadDetailsComponent } from './component/lead-details/lead-details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ColumnSettingsComponent } from './component/column-settings/column-settings.component';
+import { LeadsToolbarComponent } from './component/leads-toolbar/leads-toolbar.component';
 
 @NgModule({
   declarations: [
@@ -27,11 +27,11 @@ import { ColumnSettingsComponent } from './component/column-settings/column-sett
     ColumnComponent,
     LeadCardComponent,
     SettingsComponent,
-    AnalyticsComponent,
-    LeadsViewComponent,
+    AnalyticsComponent,    
     TableComponent,
     LeadDetailsComponent,
-    ColumnSettingsComponent,    
+    ColumnSettingsComponent,
+    LeadsToolbarComponent,    
   ],
   imports: [
     BrowserModule,
