@@ -11,4 +11,8 @@ export class LeadsViewComponent{
   newLead() {
     this.isLeadDetailsShown = true;
   }
+
+  closeLeadDetails() {
+    this.isLeadDetailsShown = false;
+  }
 }

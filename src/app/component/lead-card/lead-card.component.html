@@ -1,8 +1,12 @@
-<mat-card class="lead" cdkDrag>
+<mat-card class="lead" cdkDrag>  
   <mat-card-content (click)="onClick()" draggable="true">
+    <div class="card-controls">
+      <mat-icon class="control-icon" (click)="deleteLead()">delete</mat-icon>
+    </div>
     <p> id: {{lead.id}} </p>
     <p> title: {{lead.title}} </p>
-    <p> title: {{lead.stage}} </p>
+    <p> email: {{lead.email}} </p>
+    <p> stage: {{lead.stage}} </p>
   </mat-card-content>
 </mat-card>
 <div class="drop_area"></div>

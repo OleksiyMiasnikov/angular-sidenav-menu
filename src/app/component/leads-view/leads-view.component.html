@@ -15,7 +15,11 @@
  
 <app-kanban *ngIf="group.value == 'kanban'"></app-kanban>
 <app-table *ngIf="group.value == 'table'"></app-table>
-<app-lead-details *ngIf="isLeadDetailsShown"></app-lead-details>
+<app-lead-details 
+  *ngIf="isLeadDetailsShown"
+  (inAction)="closeLeadDetails()"
+  >
+</app-lead-details>
 
   
 

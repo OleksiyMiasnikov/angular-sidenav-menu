@@ -1,25 +1,35 @@
 <div class="lead-details">
   <h2 class="window-title">Lead details</h2>
-  <form class="lead-details-form" [formGroup]="leadForm" (ngSubmit)="submit()">
+
+  <form [formGroup]="leadForm" class="lead-details-form">
+    
     <mat-form-field>
       <mat-label>Lead title</mat-label>
-      <input matInput name="value">
+      <input matInput formControlName="title" required>
     </mat-form-field>  
+
     <mat-form-field>
-    <mat-label>Stage</mat-label>
-      <mat-select>
-        <mat-option *ngFor="let stage of stages" [value]="stage">
-          {{stage.title}}
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" required>
+    </mat-form-field>
+    
+    <mat-form-field >
+      <mat-label>Stage</mat-label>
+      <mat-select formControlName="stage" required>
+        <mat-option *ngFor="let item of stages" [value]="item.title">
+          {{item.title}}
         </mat-option>
       </mat-select>
     </mat-form-field>
+    
     <div class="form-buttons">
-      <button mat-raised-button color="primary">
+      <button mat-raised-button color="primary" (click)="savePressed()">
         <mat-icon>save</mat-icon>
       </button>
-      <button mat-raised-button>
+      <button mat-raised-button (click)="cancelPressed()">
         <mat-icon color="warn">cancel</mat-icon>
       </button>
     </div>
+  
   </form>
 </div>
