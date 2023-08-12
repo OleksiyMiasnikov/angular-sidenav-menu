@@ -11,6 +11,7 @@
     New lead
   </button>
   <span class="spacer"></span>
+  <mat-icon (click)="columnSettings()">settings</mat-icon>
 </mat-toolbar>
  
 <app-kanban *ngIf="group.value == 'kanban'"></app-kanban>
@@ -20,6 +21,9 @@
   (inAction)="closeLeadDetails()"
   >
 </app-lead-details>
+
+<app-column-settings *ngIf="isColumnSettings" (inAction)="closeColumnSettings()">
+</app-column-settings>
 
   
 

@@ -16,6 +16,7 @@ import { LeadsViewComponent } from './component/leads-view/leads-view.component'
 import { TableComponent } from './component/table/table.component';
 import { LeadDetailsComponent } from './component/lead-details/lead-details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ColumnSettingsComponent } from './component/column-settings/column-settings.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AnalyticsComponent,
     LeadsViewComponent,
     TableComponent,
-    LeadDetailsComponent,    
+    LeadDetailsComponent,
+    ColumnSettingsComponent,    
   ],
   imports: [
     BrowserModule,

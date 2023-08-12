@@ -8,11 +8,21 @@ import { Component } from '@angular/core';
   
 export class LeadsViewComponent{
   isLeadDetailsShown: boolean = false;
+  isColumnSettings: boolean = false;
+
   newLead() {
     this.isLeadDetailsShown = true;
   }
 
   closeLeadDetails() {
     this.isLeadDetailsShown = false;
+  }
+
+  columnSettings() {
+    this.isColumnSettings = true;
+  }
+
+  closeColumnSettings() {
+    this.isColumnSettings = false;
   }
 }
