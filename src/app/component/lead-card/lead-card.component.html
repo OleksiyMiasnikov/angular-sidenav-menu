@@ -1,12 +1,18 @@
-<mat-card class="lead" cdkDrag>  
-  <mat-card-content (click)="onClick()" draggable="true">
-    <div class="card-controls">
-      <mat-icon class="control-icon" (click)="deleteLead()">delete</mat-icon>
+<mat-card class="lead" cdkDrag [style.background-color]="color">
+  <mat-card-content (click)="onClick($event)" draggable="true">
+    <div class="card-title">
+      <mat-icon class="control-icon" (click)="deleteLead()" id='delete_icon'>delete</mat-icon>
     </div>
-    <p> id: {{lead.id}} </p>
-    <p> title: {{lead.title}} </p>
-    <p> email: {{lead.email}} </p>
-    <p> stage: {{lead.stage}} </p>
+    <p> id: {{currentLead.id}} </p>
+    <p> title: {{currentLead.title}} </p>
+    <p> email: {{currentLead.email}} </p>
+    <p> stage: {{currentLead.stage}} </p>
   </mat-card-content>
 </mat-card>
 <div class="drop_area"></div>
+<app-lead-details 
+  *ngIf="isLeadDetailsShown" 
+  [currentLead] = "currentLead"
+  (inAction)="closeLeadDetails()"
+  >
+</app-lead-details>

@@ -16,10 +16,10 @@ export class ApiService {
       { icon: 'settings', title: 'Settings', link: 'settings' },
     ];
     const stages: Stage[] = [
-      { id: 1, title: 'New'},
-      { id: 2, title: 'In progress'},
-      { id: 4, title: 'Checking' },   
-      { id: 8, title: 'Complete' },
+      { id: 1, title: 'New', color: 'pink'},
+      { id: 2, title: 'In progress', color: 'aqua'},
+      { id: 4, title: 'Checking', color: 'green' },   
+      { id: 8, title: 'Complete', color: 'lightblue' },
     ];
     const leads: Lead[] = [
       { id: 0, title: 'Lead 01', email: '1@1', stage: 'New'},

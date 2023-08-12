@@ -1,4 +1,5 @@
 export class Stage {
   id!: number;
-  title!: string;   
+  title!: string;
+  color!: string;
 }

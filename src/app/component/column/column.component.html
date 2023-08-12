@@ -1,13 +1,17 @@
-<mat-card class="column_title">
+<mat-card class="column_title" [style.background-color]="stage.color">
   <div>{{stage.title}}</div>
 </mat-card>
 <div class="drop_area" cdkDropList 
   [cdkDropListData]="leads"
   (cdkDropListDropped)="drop($event)"></div>
 
-<div class="column" 
+<div class="column"   
   cdkDropList 
   [cdkDropListData]="leads"
   (cdkDropListDropped)="drop($event)">  
-    <app-lead-card *ngFor="let lead of leads" [lead]="lead"></app-lead-card>
+    <app-lead-card 
+      *ngFor="let lead of leads" 
+      [currentLead]="lead"
+      [color]="stage.color">
+    </app-lead-card>
 </div>

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Lead } from 'src/app/model/lead';
 import { Stage } from 'src/app/model/stage';
@@ -10,19 +10,25 @@ import { ApiService } from 'src/app/service/api.service';
   styleUrls: ['./lead-details.component.css']
 })
 export class LeadDetailsComponent implements OnInit{
+  @Input()
+  currentLead!: Lead;
   @Output()
   inAction = new EventEmitter<boolean>();
   stages!: Stage[];
-  lead!: Lead;
-  leadForm = new FormGroup({
-    title: new FormControl('', [Validators.required, Validators.minLength(4)]),
-    email: new FormControl('', [Validators.required, Validators.email]),
-    stage: new FormControl('', [Validators.required]),
-  });
+  // lead!: Lead;
+  leadForm!: FormGroup; 
 
   constructor(private service: ApiService) { }
   
   ngOnInit(): void {
+    if (!this.currentLead) {
+      this.currentLead = new Lead(-1, '', '', '');
+    }  
+    this.leadForm = new FormGroup({
+    title: new FormControl(this.currentLead.title, [Validators.required, Validators.minLength(4)]),
+    email: new FormControl(this.currentLead.email, [Validators.required, Validators.email]),
+    stage: new FormControl(this.currentLead.stage, [Validators.required]),
+  });
     this.stages = this.service.getStages();    
   }
 
@@ -31,10 +37,13 @@ export class LeadDetailsComponent implements OnInit{
       console.log("Errors: " + this.leadForm.errors);
       return;
     }     
-    console.log(this.leadForm.value);
-    if (this.leadForm.value.title && this.leadForm.value.email && this.leadForm.value.stage) {
-      this.service.addLead(new Lead(this.leadForm.value.title, this.leadForm.value.email, this.leadForm.value.stage));
+    console.log(this.leadForm.value);    
+    if (this.currentLead.id < 0) {           
+      this.service.addLead(this.createLead());
+    } else {
+      this.service.updateLead(this.createLead());     
     }
+    
     window.location.reload();
     this.inAction.emit(false);       
   }
@@ -42,5 +51,14 @@ export class LeadDetailsComponent implements OnInit{
   cancelPressed() { 
     console.log("Canceled");
     this.inAction.emit(false);    
+  }
+
+  private createLead(): Lead {
+    return new Lead(
+      this.currentLead.id,
+      this.leadForm.value.title,
+      this.leadForm.value.email,
+      this.leadForm.value.stage
+    )
   }
 }

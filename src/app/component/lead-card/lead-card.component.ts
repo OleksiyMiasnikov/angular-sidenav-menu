@@ -8,19 +8,28 @@ import { ApiService } from 'src/app/service/api.service';
   styleUrls: ['./lead-card.component.css']
 })
 export class LeadCardComponent {
-  @Input() lead!: Lead;  
+  @Input() currentLead!: Lead;
+  @Input() color!: string; 
+  isLeadDetailsShown: boolean = false;
 
   constructor(private service: ApiService) {}
 
-  onClick() {
-    //console.log(this.lead);
+  onClick(event: Event) {
+    if (event.target instanceof Element && (<Element>event.target).id == 'delete_icon') {      
+      return;
+    }
+    this.isLeadDetailsShown = true;
   }
 
   deleteLead() {    
-    if(confirm(`Are you sure to delete lead:  ${this.lead.id}`)) {
-      console.log(`deleting lead ${this.lead.id}`);
-      this.service.deleteLead(this.lead);        
+    if(confirm(`Are you sure to delete lead:  ${this.currentLead.id}`)) {
+      console.log(`deleting lead ${this.currentLead.id}`);
+      this.service.deleteLead(this.currentLead);        
       window.location.reload();
     }
+  }
+
+  closeLeadDetails() {
+    this.isLeadDetailsShown = false;
   }
 }

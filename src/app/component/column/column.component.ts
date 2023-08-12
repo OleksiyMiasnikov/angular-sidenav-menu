@@ -18,7 +18,7 @@ export class ColumnComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.leads = this.serveice.getLeadsByStatus(this.stage.title);
+    this.leads = this.serveice.getLeadsByStatus(this.stage.title);    
   }
 
   drop(event: CdkDragDrop<Lead[]>) {
