@@ -17,6 +17,12 @@ export class KanbanComponent implements OnInit{
     this.stages = this.service.getStages();
   }
 
+  applyFilter(filterPattern: string) {
+    console.log('filter applying = ' + filterPattern);  
+    const newStages = this.stages.filter((s) => s.title.includes(filterPattern));
+    console.log(newStages);
+  }
+
   addColumn() {
      //todo   
   }

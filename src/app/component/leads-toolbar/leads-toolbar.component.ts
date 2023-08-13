@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-leads-toolbar',
@@ -8,11 +8,18 @@ import { Component, Input } from '@angular/core';
 export class LeadsToolbarComponent {
   @Input()
   view!: string;  
+  @Output()
+  filterPattern = new EventEmitter<string>()
   isLeadDetailsShown: boolean = false;
   isColumnSettings: boolean = false;
 
   newLead() {
     this.isLeadDetailsShown = true;
+  }
+
+  applyFilter(event: Event) {
+    const filertValue = (event.target as HTMLInputElement).value;
+    this.filterPattern.emit(filertValue);
   }
 
   closeLeadDetails() {

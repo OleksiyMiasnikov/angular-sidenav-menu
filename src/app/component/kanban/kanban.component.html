@@ -1,4 +1,4 @@
-<app-leads-toolbar [view]="'kanban'"></app-leads-toolbar>
+<app-leads-toolbar [view]="'kanban'" (filterPattern)="applyFilter($event)"></app-leads-toolbar>
 <div class="leads-content" cdkDropListGroup>
   <app-column *ngFor="let stage of stages" [stage]="stage">    
   </app-column>
